@@ -29,7 +29,6 @@ class EpisodesViewModel {
             guard let safeSelf = self else { return }
             switch result {
             case .success(let episodes):
-                print("log episodes : \(episodes)")
                 safeSelf.episodes = episodes
                 safeSelf.filteredEpisodes = episodes
                 completion(.success(()))

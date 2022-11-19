@@ -204,7 +204,6 @@ extension PlayerProvider {
         if self.isAVAudioSessionActive {
             do {
                 try AVAudioSession.sharedInstance().setActive(false)
-                print("AVAudioSession is deactivate")
                 UIApplication.shared.endReceivingRemoteControlEvents()
                 self.removeCommandCenter()
                 self.isAVAudioSessionActive = false

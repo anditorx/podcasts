@@ -10,26 +10,20 @@ import UIKit
 class HomeViewController: BaseViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
-    var searchTime: Timer?
+    
     var viewModelBanner = BannersViewModel()
-    var count: Int?
+    var count: Int = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
         getDataBanner(q: "Makna")
-        setup()
-        
-        
     }
     
     func setup() {
-        
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
     }
-
 }
 
 extension HomeViewController: UICollectionViewDelegate {
@@ -37,12 +31,13 @@ extension HomeViewController: UICollectionViewDelegate {
     func getDataBanner(q: String) {
         viewModelBanner.searchPodcasts(q: q) { [weak self] (_) in
             guard let `self` = self else { return }
+            self.count = self.viewModelBanner.numberOfBanners
+           
             self.collectionView.reloadData()
             
+            self.setup()
+            
         }
-        
-        
-        
     }
 }
 
@@ -60,27 +55,53 @@ extension HomeViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if collectionView == self.collectionView {
+        
+        if collectionView != self.collectionView {
+            return self.count
+//            return 5
+            
+        }
+        else {
             if section == 0 {
-               return 1
+                return 1
             }
             else {
                 return 10
             }
         }
-        else {
-            return viewModelBanner.numberOfBanners
-//            return 5
-        }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        if collectionView == self.collectionView {
+        if collectionView != self.collectionView {
+            
+            
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "bannerId", for: indexPath) as! BannerViewCell
+    
+            let index = indexPath.row
+            cell.imageViewBanner.kf.setImage(with: URL(string: viewModelBanner.bannerImagUrl(at: index))) { (result) in
+                switch result {
+                case.success:
+                    cell.imageViewBanner.contentMode = .scaleAspectFill
+                    cell.imageViewBanner.layer.cornerRadius = 15
+                    cell.imageViewBanner.layer.masksToBounds = true
+                case .failure:
+                    cell.imageViewBanner.contentMode = .center
+                    cell.imageViewBanner.image = UIImage(systemName: "photo")
+                }
+            }
+
+            return cell
+            
+        }
+        else {
             
             if indexPath.section == 0 {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "homeItemBannerViewCellId", for: indexPath) as! HomeItemBannerViewCell
                 
+//                cell.collectionView.backgroundColor = .clear
+//                cell.collectionView.backgroundColor = .yellow
                 
                 cell.collectionView.dataSource = self
                 cell.collectionView.delegate = self
@@ -90,27 +111,12 @@ extension HomeViewController: UICollectionViewDataSource {
             }
             else {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "homeItemCollectionViewCellId", for: indexPath) as! HomeItemCollectionViewCell
-                let item = indexPath.item
+               
                 cell.labelTitle.text = "Is it the Answer"
                 cell.labelRelease.text = "Release date:  March, 23 - 2017"
                 return cell
             }
-        }
-        else {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "bannerId", for: indexPath) as! BannerViewCell
-    
-//            let index = indexPath.row
-//            cell.imageViewBanner.kf.setImage(with: URL(string: viewModelBanner.bannerImagUrl(at: index))) { (result) in
-//                switch result {
-//                case.success:
-//                    cell.imageViewBanner.contentMode = .scaleAspectFill
-//                case .failure:
-//                    cell.imageViewBanner.contentMode = .center
-//                    cell.imageViewBanner.image = UIImage(systemName: "photo")
-//                }
-//            }
             
-            return cell
         }
         
         
@@ -187,12 +193,10 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
         func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
             if collectionView != self.collectionView {
-                let screenWidth = UIScreen.main.bounds.width
-                return CGSize(width: 273, height: 187)
+                return CGSize(width: 285, height: 200)
             }
             else {
                 if indexPath.section != 0 {
-
                     let screenWidth = UIScreen.main.bounds.width
                     let width = screenWidth
                     let height = 88.0

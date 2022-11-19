@@ -53,9 +53,9 @@
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dummy_banner" translatesAutoresizingMaskIntoConstraints="NO" id="iw6-Ln-F9e">
                                                                         <rect key="frame" x="0.0" y="0.0" width="273" height="187"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="height" constant="187" id="LsL-jd-ggZ"/>
-                                                                            <constraint firstAttribute="width" secondItem="iw6-Ln-F9e" secondAttribute="height" multiplier="273:187" id="gVe-D7-3Gj"/>
-                                                                            <constraint firstAttribute="width" constant="273" id="kkh-6l-Q83"/>
+                                                                            <constraint firstAttribute="height" constant="200" id="LsL-jd-ggZ"/>
+                                                                            <constraint firstAttribute="width" secondItem="iw6-Ln-F9e" secondAttribute="height" multiplier="285:200" id="gVe-D7-3Gj"/>
+                                                                            <constraint firstAttribute="width" constant="285" id="kkh-6l-Q83"/>
                                                                         </constraints>
                                                                     </imageView>
                                                                 </subviews>

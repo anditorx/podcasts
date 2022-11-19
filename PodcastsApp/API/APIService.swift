@@ -36,7 +36,9 @@ class APIService: Service {
             .responseDecodable(of: SearchResponse.self, completionHandler: { (response) in
                 switch response.result {
                 case .success(let searchResponse):
-                    completion(.success(searchResponse.resultBanners))
+                    completion(
+                        .success(searchResponse.resultBanners)
+                    )
                 case .failure(let error):
                     completion(.failure(error))
                 }

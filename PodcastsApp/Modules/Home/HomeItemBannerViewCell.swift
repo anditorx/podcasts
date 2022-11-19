@@ -10,8 +10,4 @@ import UIKit
 class HomeItemBannerViewCell: UICollectionViewCell {
     @IBOutlet weak var collectionView: UICollectionView!
     
-    
-    
-    
-    
 }
