@@ -11,13 +11,18 @@ class HomeViewController: BaseViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var viewModelBanner = BannersViewModel()
-    var count: Int = 1
+    let viewModelBanner = BannersViewModel()
+    let viewModelPodcast = PodcastsViewModel()
+    let viewModelMusic = MusicsViewModel()
+    
+    var countBanner: Int = 1
+    var countMusic: Int = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        getDataBanner(q: "Makna")
+        getDataBanner(q: "makna")
+        getDataMusic(q: "reality club")
     }
     
     func setup() {
@@ -31,14 +36,31 @@ extension HomeViewController: UICollectionViewDelegate {
     func getDataBanner(q: String) {
         viewModelBanner.searchPodcasts(q: q) { [weak self] (_) in
             guard let `self` = self else { return }
-            self.count = self.viewModelBanner.numberOfBanners
-           
-            self.collectionView.reloadData()
-            
-            self.setup()
+            self.countBanner = self.viewModelBanner.numberOfBanners
+//            self.setup()
+//            self.collectionView.reloadData()
             
         }
     }
+    
+    func getDataMusic(q: String) {
+        viewModelMusic.searchMusic(q: q) { [weak self] (_) in
+            guard let `self` = self else { return }
+            self.countMusic = self.viewModelMusic.numberOfMusic
+            self.setup()
+            self.collectionView.reloadData()
+            
+            
+            
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        showEpisodesViewController(podcast: viewModelBanner.banner(at: indexPath.row))
+        print("log \(indexPath.row)")
+    }
+    
+   
 }
 
 // MARK: - UICollectionViewDataSource
@@ -57,7 +79,7 @@ extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         if collectionView != self.collectionView {
-            return self.count
+            return self.countBanner
 //            return 5
             
         }
@@ -66,7 +88,8 @@ extension HomeViewController: UICollectionViewDataSource {
                 return 1
             }
             else {
-                return 10
+                return self.countMusic
+//                return 10
             }
         }
         
@@ -100,20 +123,33 @@ extension HomeViewController: UICollectionViewDataSource {
             if indexPath.section == 0 {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "homeItemBannerViewCellId", for: indexPath) as! HomeItemBannerViewCell
                 
-//                cell.collectionView.backgroundColor = .clear
-//                cell.collectionView.backgroundColor = .yellow
-                
                 cell.collectionView.dataSource = self
                 cell.collectionView.delegate = self
-                
                 
                 return cell
             }
             else {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "homeItemCollectionViewCellId", for: indexPath) as! HomeItemCollectionViewCell
-               
-                cell.labelTitle.text = "Is it the Answer"
-                cell.labelRelease.text = "Release date:  March, 23 - 2017"
+                
+                let index = indexPath.row
+//                cell.labelTitle.text = "Is it the Answer"
+//                cell.labelRelease.text = "Release date:  March, 23 - 2017"
+                
+                cell.labelTitle.text = viewModelMusic.musicTrackName(at: index)
+                cell.labelRelease.text = viewModelMusic.musicArtistName(at: index)
+                cell.imageView.kf.setImage(with: URL(string: viewModelMusic.musicImagUrl(at: index))) { (result) in
+                    switch result {
+                    case.success:
+                        cell.imageView.contentMode = .scaleAspectFill
+                        cell.imageView.layer.cornerRadius = 10
+                        cell.imageView.layer.masksToBounds = true
+                    case .failure:
+                        cell.imageView.contentMode = .center
+                        cell.imageView.image = UIImage(systemName: "photo")
+                    }
+                }
+
+                
                 return cell
             }
             

@@ -53,6 +53,8 @@
 		E51F326D2923556B00EE98F4 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E51F326C2923556B00EE98F4 /* Home.storyboard */; };
 		E51F326F292355CF00EE98F4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51F326E292355CF00EE98F4 /* HomeViewController.swift */; };
 		E51F3271292358DF00EE98F4 /* HomeItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51F3270292358DF00EE98F4 /* HomeItemCollectionViewCell.swift */; };
+		E586ACCD29297FEF00A1591E /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = E586ACCC29297FEF00A1591E /* Music.swift */; };
+		E586ACCF2929810600A1591E /* MusicViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E586ACCE2929810600A1591E /* MusicViewModel.swift */; };
 		E5C432192926A8860016FAEB /* Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C432182926A8860016FAEB /* Banner.swift */; };
 		E5C4321C2926AB050016FAEB /* BannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C4321B2926AB040016FAEB /* BannerViewModel.swift */; };
 		E5FB05042923BA9300BC3BCD /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5FB05032923BA9300BC3BCD /* UIColorExtensions.swift */; };
@@ -111,6 +113,8 @@
 		E51F326C2923556B00EE98F4 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		E51F326E292355CF00EE98F4 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E51F3270292358DF00EE98F4 /* HomeItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		E586ACCC29297FEF00A1591E /* Music.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Music.swift; sourceTree = "<group>"; };
+		E586ACCE2929810600A1591E /* MusicViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicViewModel.swift; sourceTree = "<group>"; };
 		E5C432182926A8860016FAEB /* Banner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banner.swift; sourceTree = "<group>"; };
 		E5C4321B2926AB040016FAEB /* BannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerViewModel.swift; sourceTree = "<group>"; };
 		E5FB05032923BA9300BC3BCD /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
@@ -196,6 +200,7 @@
 				3AEF9A4A2910D98000CE67A8 /* Episode.swift */,
 				3AE8BCD82915493C00AE1BFE /* DownloadedEpisode.swift */,
 				3AA5C50F29092E1B001B0EB9 /* Service.swift */,
+				E586ACCC29297FEF00A1591E /* Music.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -314,8 +319,17 @@
 				E51F3270292358DF00EE98F4 /* HomeItemCollectionViewCell.swift */,
 				E5FB05052924017400BC3BCD /* HomeItemBannerViewCell.swift */,
 				E5C4321A2926A9360016FAEB /* Banner */,
+				E586ACD02929810A00A1591E /* Music */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		E586ACD02929810A00A1591E /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				E586ACCE2929810600A1591E /* MusicViewModel.swift */,
+			);
+			path = Music;
 			sourceTree = "<group>";
 		};
 		E5C4321A2926A9360016FAEB /* Banner */ = {
@@ -455,6 +469,7 @@
 				E5C432192926A8860016FAEB /* Banner.swift in Sources */,
 				3AE8BCCF2914F9AB00AE1BFE /* DownloadsViewController.swift in Sources */,
 				E51F326F292355CF00EE98F4 /* HomeViewController.swift in Sources */,
+				E586ACCD29297FEF00A1591E /* Music.swift in Sources */,
 				3A0D7F902910D57800688DD2 /* EpisodesViewController.swift in Sources */,
 				3AEF9A542910E89A00CE67A8 /* PlayerView.swift in Sources */,
 				3AE8BCD92915493C00AE1BFE /* DownloadedEpisode.swift in Sources */,
@@ -478,6 +493,7 @@
 				3AA5C50E29092D6D001B0EB9 /* Podcast.swift in Sources */,
 				3A66A6422911637600996F33 /* PlayerViewModel.swift in Sources */,
 				3AA5C50C2909258A001B0EB9 /* FavoriteViewCell.swift in Sources */,
+				E586ACCF2929810600A1591E /* MusicViewModel.swift in Sources */,
 				3AEF9A522910E22E00CE67A8 /* PlayerViewController.swift in Sources */,
 				E5FB05042923BA9300BC3BCD /* UIColorExtensions.swift in Sources */,
 				3AA0199829090D190037EFC6 /* MainViewController.swift in Sources */,

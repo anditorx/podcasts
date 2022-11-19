@@ -45,6 +45,26 @@ class APIService: Service {
             })
     }
     
+    func getMusicForHome(q: String, completion: @escaping (Result<[Music], Error>) -> Void) {
+        let parameters: [String: Any] = [
+            "media": "music",
+            "limit": 10,
+            "term": q
+        ]
+        
+        AF.request(SEARCH_URL, method: .get, parameters: parameters, encoding: URLEncoding.default)
+            .responseDecodable(of: SearchResponse.self, completionHandler: { (response) in
+                switch response.result {
+                case .success(let searchResponse):
+                    completion(
+                        .success(searchResponse.resultMusics)
+                    )
+                case .failure(let error):
+                    completion(.failure(error))
+                }
+            })
+    }
+    
     
     func fetchEpisodes(feedUrl: String, completion: @escaping (Result<[Episode], Error>) -> Void) {
         if let url = URL(string: feedUrl) {
