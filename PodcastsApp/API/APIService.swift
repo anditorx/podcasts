@@ -19,12 +19,30 @@ class APIService: Service {
                 switch response.result {
                 case .success(let searchResponse):
                     completion(.success(searchResponse.results))
-                    
                 case .failure(let error):
                     completion(.failure(error))
                 }
             })
     }
+    
+    func getPodcastsForBanner(q: String, completion: @escaping (Result<[Banner], Error>) -> Void) {
+        let parameters: [String: Any] = [
+            "media": "podcast",
+            "limit": 5,
+            "term": q
+        ]
+        
+        AF.request(SEARCH_URL, method: .get, parameters: parameters, encoding: URLEncoding.default)
+            .responseDecodable(of: SearchResponse.self, completionHandler: { (response) in
+                switch response.result {
+                case .success(let searchResponse):
+                    completion(.success(searchResponse.resultBanners))
+                case .failure(let error):
+                    completion(.failure(error))
+                }
+            })
+    }
+    
     
     func fetchEpisodes(feedUrl: String, completion: @escaping (Result<[Episode], Error>) -> Void) {
         if let url = URL(string: feedUrl) {

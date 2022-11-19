@@ -36,14 +36,17 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nbk-21-qnZ">
-                    <rect key="frame" x="72" y="27" width="170" height="18"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nbk-21-qnZ">
+                    <rect key="frame" x="72" y="27" width="184" height="18"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="184" id="z5N-2y-u6B"/>
+                    </constraints>
                     <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="kK4-3z-wD3">
-                    <rect key="frame" x="258" y="24" width="120" height="24"/>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="kK4-3z-wD3">
+                    <rect key="frame" x="266" y="24" width="108" height="24"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lxF-x6-G0n">
                             <rect key="frame" x="0.0" y="0.0" width="32" height="24"/>
@@ -55,7 +58,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R5e-PU-O4D">
-                            <rect key="frame" x="48" y="0.0" width="24" height="24"/>
+                            <rect key="frame" x="42" y="0.0" width="24" height="24"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="24" id="tP1-mv-R6G"/>
                                 <constraint firstAttribute="height" constant="24" id="xOx-X3-YGj"/>
@@ -68,7 +71,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dny-mw-iFh">
-                            <rect key="frame" x="88" y="0.0" width="32" height="24"/>
+                            <rect key="frame" x="76" y="0.0" width="32" height="24"/>
                             <color key="tintColor" red="0.054901960784313725" green="0.043137254901960784" blue="0.12156862745098039" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" image="forward.fill" catalog="system"/>
@@ -83,12 +86,12 @@
             <color key="backgroundColor" red="0.79607843137254897" green="0.98431372549019602" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <gestureRecognizers/>
             <constraints>
+                <constraint firstItem="K6m-dC-ceR" firstAttribute="leading" secondItem="gTE-6S-y7r" secondAttribute="leading" constant="12" id="2CF-6v-qfe"/>
                 <constraint firstItem="Nbk-21-qnZ" firstAttribute="centerY" secondItem="K6m-dC-ceR" secondAttribute="centerY" id="5Tx-rt-T8y"/>
-                <constraint firstAttribute="trailing" secondItem="kK4-3z-wD3" secondAttribute="trailing" constant="12" id="6Qo-Tj-15h"/>
-                <constraint firstItem="kK4-3z-wD3" firstAttribute="leading" secondItem="Nbk-21-qnZ" secondAttribute="trailing" constant="16" id="EXW-yD-pls"/>
                 <constraint firstItem="Nbk-21-qnZ" firstAttribute="leading" secondItem="K6m-dC-ceR" secondAttribute="trailing" constant="12" id="FsC-qF-cm6"/>
                 <constraint firstAttribute="bottom" secondItem="K6m-dC-ceR" secondAttribute="bottom" priority="250" constant="12" id="JZb-6a-LLf"/>
-                <constraint firstItem="K6m-dC-ceR" firstAttribute="leading" secondItem="gTE-6S-y7r" secondAttribute="leading" constant="12" id="USC-CO-R8x"/>
+                <constraint firstItem="kK4-3z-wD3" firstAttribute="leading" secondItem="Nbk-21-qnZ" secondAttribute="trailing" constant="10" id="QzS-wg-aVl"/>
+                <constraint firstAttribute="trailing" secondItem="kK4-3z-wD3" secondAttribute="trailing" constant="16" id="a2I-GU-R98"/>
                 <constraint firstItem="kK4-3z-wD3" firstAttribute="centerY" secondItem="K6m-dC-ceR" secondAttribute="centerY" id="au4-qq-U1S"/>
                 <constraint firstItem="K6m-dC-ceR" firstAttribute="top" secondItem="3DG-oN-WKE" secondAttribute="top" constant="12" id="ccW-xk-D9u"/>
             </constraints>

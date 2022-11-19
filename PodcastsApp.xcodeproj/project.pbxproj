@@ -53,6 +53,8 @@
 		E51F326D2923556B00EE98F4 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E51F326C2923556B00EE98F4 /* Home.storyboard */; };
 		E51F326F292355CF00EE98F4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51F326E292355CF00EE98F4 /* HomeViewController.swift */; };
 		E51F3271292358DF00EE98F4 /* HomeItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51F3270292358DF00EE98F4 /* HomeItemCollectionViewCell.swift */; };
+		E5C432192926A8860016FAEB /* Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C432182926A8860016FAEB /* Banner.swift */; };
+		E5C4321C2926AB050016FAEB /* BannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C4321B2926AB040016FAEB /* BannerViewModel.swift */; };
 		E5FB05042923BA9300BC3BCD /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5FB05032923BA9300BC3BCD /* UIColorExtensions.swift */; };
 		E5FB05062924017400BC3BCD /* HomeItemBannerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5FB05052924017400BC3BCD /* HomeItemBannerViewCell.swift */; };
 		E5FB05082924069C00BC3BCD /* BannerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5FB05072924069C00BC3BCD /* BannerViewCell.swift */; };
@@ -109,6 +111,8 @@
 		E51F326C2923556B00EE98F4 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		E51F326E292355CF00EE98F4 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E51F3270292358DF00EE98F4 /* HomeItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		E5C432182926A8860016FAEB /* Banner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banner.swift; sourceTree = "<group>"; };
+		E5C4321B2926AB040016FAEB /* BannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerViewModel.swift; sourceTree = "<group>"; };
 		E5FB05032923BA9300BC3BCD /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		E5FB05052924017400BC3BCD /* HomeItemBannerViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeItemBannerViewCell.swift; sourceTree = "<group>"; };
 		E5FB05072924069C00BC3BCD /* BannerViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerViewCell.swift; sourceTree = "<group>"; };
@@ -188,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				3AA5C50D29092D6D001B0EB9 /* Podcast.swift */,
+				E5C432182926A8860016FAEB /* Banner.swift */,
 				3AEF9A4A2910D98000CE67A8 /* Episode.swift */,
 				3AE8BCD82915493C00AE1BFE /* DownloadedEpisode.swift */,
 				3AA5C50F29092E1B001B0EB9 /* Service.swift */,
@@ -308,9 +313,18 @@
 				E51F326E292355CF00EE98F4 /* HomeViewController.swift */,
 				E51F3270292358DF00EE98F4 /* HomeItemCollectionViewCell.swift */,
 				E5FB05052924017400BC3BCD /* HomeItemBannerViewCell.swift */,
-				E5FB05072924069C00BC3BCD /* BannerViewCell.swift */,
+				E5C4321A2926A9360016FAEB /* Banner */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		E5C4321A2926A9360016FAEB /* Banner */ = {
+			isa = PBXGroup;
+			children = (
+				E5FB05072924069C00BC3BCD /* BannerViewCell.swift */,
+				E5C4321B2926AB040016FAEB /* BannerViewModel.swift */,
+			);
+			path = Banner;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -437,6 +451,8 @@
 			files = (
 				3AA5C51229096565001B0EB9 /* SearchResponse.swift in Sources */,
 				3AEF9A4B2910D98000CE67A8 /* Episode.swift in Sources */,
+				E5C4321C2926AB050016FAEB /* BannerViewModel.swift in Sources */,
+				E5C432192926A8860016FAEB /* Banner.swift in Sources */,
 				3AE8BCCF2914F9AB00AE1BFE /* DownloadsViewController.swift in Sources */,
 				E51F326F292355CF00EE98F4 /* HomeViewController.swift in Sources */,
 				3A0D7F902910D57800688DD2 /* EpisodesViewController.swift in Sources */,

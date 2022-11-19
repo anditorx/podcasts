@@ -7,37 +7,55 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, UICollectionViewDelegate {
+class HomeViewController: BaseViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
-    
+    var searchTime: Timer?
+    var viewModelBanner = BannersViewModel()
+    var count: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        getDataBanner(q: "Makna")
         setup()
+        
+        
     }
     
     func setup() {
-        collectionView.dataSource = self
-        collectionView.delegate = self
+        
+        self.collectionView.delegate = self
+        self.collectionView.dataSource = self
     }
-    
 
+}
+
+extension HomeViewController: UICollectionViewDelegate {
+    
+    func getDataBanner(q: String) {
+        viewModelBanner.searchPodcasts(q: q) { [weak self] (_) in
+            guard let `self` = self else { return }
+            self.collectionView.reloadData()
+            
+        }
+        
+        
+        
+    }
 }
 
 // MARK: - UICollectionViewDataSource
 extension HomeViewController: UICollectionViewDataSource {
-    
-    
+   
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        
         if collectionView == self.collectionView {
             return 2
         }
         else {
             return 1
+            
         }
     }
     
@@ -51,19 +69,15 @@ extension HomeViewController: UICollectionViewDataSource {
             }
         }
         else {
-            return 5
+            return viewModelBanner.numberOfBanners
+//            return 5
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        if collectionView !== self.collectionView {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "bannerId", for: indexPath) as! BannerViewCell
-    
+        if collectionView == self.collectionView {
             
-            return cell
-        }
-        else {
             if indexPath.section == 0 {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "homeItemBannerViewCellId", for: indexPath) as! HomeItemBannerViewCell
                 
@@ -81,6 +95,22 @@ extension HomeViewController: UICollectionViewDataSource {
                 cell.labelRelease.text = "Release date:  March, 23 - 2017"
                 return cell
             }
+        }
+        else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "bannerId", for: indexPath) as! BannerViewCell
+    
+//            let index = indexPath.row
+//            cell.imageViewBanner.kf.setImage(with: URL(string: viewModelBanner.bannerImagUrl(at: index))) { (result) in
+//                switch result {
+//                case.success:
+//                    cell.imageViewBanner.contentMode = .scaleAspectFill
+//                case .failure:
+//                    cell.imageViewBanner.contentMode = .center
+//                    cell.imageViewBanner.image = UIImage(systemName: "photo")
+//                }
+//            }
+            
+            return cell
         }
         
         
@@ -127,6 +157,7 @@ extension HomeViewController: UICollectionViewDataSource {
 //// MARK: - UICollectionViewDelegateFlowLayout
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        
             if collectionView == self.collectionView {
                 if section == 0 {
                     return UIEdgeInsets(top: 0, left: 0, bottom: -10, right: 0)

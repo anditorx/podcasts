@@ -12,10 +12,13 @@ class FavoritesViewModel {
     
     func loadPodcasts(completion: @escaping (Result<Void, Error>) -> Void) {
         podcasts = DPodcast.fetch(in: viewContext)
+        print("log response favorite: \(podcasts)")
         completion(.success(()))
     }
     
     var numberOfPodcasts: Int {
+        print("log numberOfPodcasts favorite: \(podcasts.count)")
+        print("log favorite: \(podcasts)")
         return podcasts.count
     }
     

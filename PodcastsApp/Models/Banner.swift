@@ -1,6 +1,13 @@
+//
+//  Banner.swift
+//  PodcastsApp
+//
+//  Created by Armstrong on 18/11/22.
+//
+
 import Foundation
 
-protocol Podcast {
+protocol Banner {
     var trackId: Int { get }
     var trackName: String { get }
     var trackCount: Int { get }
@@ -9,14 +16,14 @@ protocol Podcast {
     var feedUrl: String { get }
 }
 
-struct Podcast_: Decodable, Podcast {
+struct Banner_: Decodable, Banner {
     var trackId: Int
     var trackName: String
     var trackCount: Int
     var artistName: String
     var artworkUrl600: String
     var feedUrl: String
-    
+
     enum CodingKeys: String, CodingKey {
         case trackId
         case trackName
@@ -25,7 +32,7 @@ struct Podcast_: Decodable, Podcast {
         case artworkUrl600
         case feedUrl
     }
-    
+
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.trackId = try container.decodeIfPresent(Int.self, forKey: .trackId) ?? 0
@@ -36,3 +43,4 @@ struct Podcast_: Decodable, Podcast {
         self.feedUrl = try container.decodeIfPresent(String.self, forKey: .feedUrl) ?? ""
     }
 }
+

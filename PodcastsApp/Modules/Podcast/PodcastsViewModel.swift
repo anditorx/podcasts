@@ -17,7 +17,6 @@ class PodcastsViewModel {
                 case .success(let podcasts):
                     self?.podcasts = podcasts
                     completion(.success(()))
-                    
                 case .failure(let error):
                     completion(.failure(error))
                 }
@@ -26,7 +25,6 @@ class PodcastsViewModel {
     }
     
     var numberOfPodcasts: Int {
-        print("log podcasts: \(podcasts)")
         return podcasts.count
     }
     
