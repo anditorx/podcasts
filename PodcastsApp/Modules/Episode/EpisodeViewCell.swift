@@ -8,10 +8,10 @@
 import UIKit
 
 class EpisodeViewCell: UITableViewCell {
-    @IBOutlet weak var number: UILabel!
     @IBOutlet weak var thumbImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var number: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

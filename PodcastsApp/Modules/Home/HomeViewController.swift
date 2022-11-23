@@ -6,13 +6,13 @@
 //
 
 import UIKit
+import Foundation
 
 class HomeViewController: BaseViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
     let viewModelBanner = BannersViewModel()
-    let viewModelPodcast = PodcastsViewModel()
     let viewModelMusic = MusicsViewModel()
     
     var countBanner: Int = 1
@@ -29,6 +29,7 @@ class HomeViewController: BaseViewController {
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
     }
+    
 }
 
 extension HomeViewController: UICollectionViewDelegate {
@@ -56,8 +57,8 @@ extension HomeViewController: UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        showEpisodesViewController(podcast: viewModelBanner.banner(at: indexPath.row))
-        print("log \(indexPath.row)")
+//        showEpisodesViewController(banner: viewModelBanner.banner(at: indexPath.row))
+//        print("log \(indexPath.row)")
     }
     
    
@@ -132,11 +133,11 @@ extension HomeViewController: UICollectionViewDataSource {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "homeItemCollectionViewCellId", for: indexPath) as! HomeItemCollectionViewCell
                 
                 let index = indexPath.row
-//                cell.labelTitle.text = "Is it the Answer"
-//                cell.labelRelease.text = "Release date:  March, 23 - 2017"
+                let dateDummy = viewModelMusic.musicReleaseDate(at: index)
+                
                 
                 cell.labelTitle.text = viewModelMusic.musicTrackName(at: index)
-                cell.labelRelease.text = viewModelMusic.musicArtistName(at: index)
+                cell.labelRelease.text = "\(dateDummy)"
                 cell.imageView.kf.setImage(with: URL(string: viewModelMusic.musicImagUrl(at: index))) { (result) in
                     switch result {
                     case.success:
@@ -148,8 +149,6 @@ extension HomeViewController: UICollectionViewDataSource {
                         cell.imageView.image = UIImage(systemName: "photo")
                     }
                 }
-
-                
                 return cell
             }
             

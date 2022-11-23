@@ -9,9 +9,11 @@ import Foundation
  
 class EpisodesViewModel {
     private let podcast: Podcast
+    
     init(podcast: Podcast) {
         self.podcast = podcast
     }
+    
     
     private var episodes: [Episode] = []
     private var filteredEpisodes: [Episode] = []
@@ -52,7 +54,7 @@ class EpisodesViewModel {
 
 extension EpisodesViewModel {
     var numberOfEpisodes: Int {
-        
+       
         return filteredEpisodes.count
     }
     
@@ -62,7 +64,7 @@ extension EpisodesViewModel {
     
     func episodePubDate(at index: Int) -> String {
         let date = filteredEpisodes[index].publishDate
-        return date.description
+        return date.stringDateFromatter(format: "dd MMMM YYYY")
     }
     
     func episodeTitle(at index: Int) -> String {

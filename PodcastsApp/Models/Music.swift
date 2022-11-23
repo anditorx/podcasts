@@ -3,7 +3,6 @@
 //  PodcastsApp
 //
 //  Created by Armstrong on 20/11/22.
-//
 
 import Foundation
 
@@ -14,6 +13,7 @@ protocol Music {
     var artistName: String { get }
     var artworkUrl100: String { get }
     var feedUrl: String { get }
+    var releaseDate: String { get }
 }
 
 struct Music_: Decodable, Music {
@@ -23,6 +23,7 @@ struct Music_: Decodable, Music {
     var artistName: String
     var artworkUrl100: String
     var feedUrl: String
+    var releaseDate: String
 
     enum CodingKeys: String, CodingKey {
         case trackId
@@ -31,6 +32,7 @@ struct Music_: Decodable, Music {
         case artistName
         case artworkUrl100
         case feedUrl
+        case releaseDate
     }
 
     init(from decoder: Decoder) throws {
@@ -41,5 +43,6 @@ struct Music_: Decodable, Music {
         self.artistName = try container.decodeIfPresent(String.self, forKey: .artistName) ?? ""
         self.artworkUrl100 = try container.decodeIfPresent(String.self, forKey: .artworkUrl100) ?? ""
         self.feedUrl = try container.decodeIfPresent(String.self, forKey: .feedUrl) ?? ""
+        self.releaseDate = try container.decodeIfPresent(String.self, forKey: .releaseDate) ?? ""
     }
 }

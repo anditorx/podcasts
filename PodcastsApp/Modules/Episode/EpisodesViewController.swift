@@ -80,7 +80,7 @@ extension EpisodesViewController: UITableViewDataSource {
         
         let index = indexPath.row
         
-//        cell.number.text = String(index+1)
+        cell.number.text = String(index+1)
         
         cell.titleLabel.text = viewModel.episodeTitle(at: index)
         cell.descriptionLabel.text = viewModel.artistName
@@ -128,4 +128,5 @@ extension UIViewController {
         
         navigationController?.pushViewController(viewController, animated: true)
     }
+
 }
