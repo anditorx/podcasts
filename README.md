@@ -50,6 +50,15 @@ Install podcasts with CocoaPods
 - open `Podcasts.xcworkspace`
 - run the app
 
+# Author
+
+- [@anditorx](https://www.github.com/anditorx)
+
+Thank's to our mentor
+
+- [@https://github.com/hidayatabisena](https://github.com/hidayatabisena)
+- [@bayuwy](https://github.com/bayuwy)
+
 # Tech Used
 
 ![Swift](https://img.shields.io/badge/swift-F54A2A?style=for-the-badge&logo=swift&logoColor=white)
