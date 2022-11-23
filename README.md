@@ -11,13 +11,13 @@ Projek ini merupakan projek yang dibuat untuk memenuhi tugas akhir IOS App Devel
 
 Mengikuti desain yang ada, berikut ini beberapa fitur yang dibuat:
 
-    - TableView
-    - Collection View
-    - Custom NavigationView
-    - Play Audio Files
-    - Read data from JSON files
-    - Search Functions
-    - Core Data
+- TableView
+- Collection View
+- Custom NavigationView
+- Play Audio Files
+- Read data from JSON files
+- Search Functions
+- Core Data
 
 # Screenshots
 
