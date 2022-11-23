@@ -23,6 +23,8 @@ Mengikuti desain yang ada, berikut ini beberapa fitur yang dibuat:
 
 <img src="https://res.cloudinary.com/dzwztfzvu/image/upload/v1669192771/img_cover_l1z5ir.png">
 
+<img src="https://res.cloudinary.com/dzwztfzvu/image/upload/v1669202000/Screen_Shot_2022-11-23_at_17.34.21_qx70us.png">
+
 # Installation
 
 Install podcasts with CocoaPods
@@ -39,7 +41,7 @@ Install podcasts with CocoaPods
   cd Podcasts
 ```
 
-- open terminal and cd to Podcasts folder root & run pod install (install Cocoapods for this command to work).
+- open terminal and `cd` to Podcasts folder root & run `pod install` (install Cocoapods for this command to work).
 
 ```bash
   pod install
