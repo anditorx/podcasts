@@ -53,11 +53,7 @@ Install podcasts with CocoaPods
 # Author
 
 - [@anditorx](https://www.github.com/anditorx)
-
-Thank's to our mentor
-
-- [@https://github.com/hidayatabisena](https://github.com/hidayatabisena)
-- [@bayuwy](https://github.com/bayuwy)
+- Thank's to our mentor [@hidayatabisena](https://github.com/hidayatabisena) & [@bayuwy](https://github.com/bayuwy)
 
 # Tech Used
 
