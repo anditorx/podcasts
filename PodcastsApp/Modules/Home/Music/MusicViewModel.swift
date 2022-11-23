@@ -51,17 +51,10 @@ class MusicsViewModel {
     func musicReleaseDate(at index: Int) -> String {
         
         let dateFromRes = "\(musics[index].releaseDate)"
-
-        let formatter = ISO8601DateFormatter()
-        formatter.timeZone = TimeZone(secondsFromGMT: 0)
-        let date1 = formatter.date(from: dateFromRes)
-        formatter.formatOptions = [.withFullDate,
-                                   .withDashSeparatorInDate]
-        let date2 = formatter.string(from: date1!)
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        let date = dateFormatter.date(from: date2)
-        let result = date!.stringDateFromatter(format: "MMMM, d yyyy")
+        let date1 = dateFormatterEx.formatIso(input: dateFromRes)
+        let formatting = dateFormatterEx.dateFormatter(format: "yyyy-MM-dd", input: date1)
+        
+        let result = formatting.stringDateFromatter(format: "MMMM, d yyyy")
         
         return "\(result)"
     }

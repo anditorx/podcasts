@@ -1,16 +1,28 @@
 import Foundation
 
 extension Date {
-    init(dateString:String) {
-        self = Date.iso8601Formatter.date(from: dateString)!
+   
+    
+    func formatIso(input: String) -> String {
+        let formatter = ISO8601DateFormatter()
+        formatter.timeZone = TimeZone(secondsFromGMT: 0)
+        let date1 = formatter.date(from: input)
+        formatter.formatOptions = [.withFullDate,
+                                   .withDashSeparatorInDate]
+        let date2 = formatter.string(from: date1!)
+        return date2
+    }
+    
+    
+    func dateFormatter(format: String, input: String) -> Date {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let date = dateFormatter.date(from: input)
+        
+        return date!
     }
 
-    static let iso8601Formatter: ISO8601DateFormatter = {
-        let formatter = ISO8601DateFormatter()
-        formatter.formatOptions = [.withFullDate]
-        return formatter
-    }()
-
+    
     func stringDateFromatter(format: String) -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = format
@@ -19,6 +31,7 @@ extension Date {
         
         return formatter.string(from: self)
     }
+    
     
     func convertDateFormat(inputDate: String) -> String {
 
