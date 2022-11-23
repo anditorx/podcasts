@@ -1,10 +1,3 @@
-//
-//  DateExtensions.swift
-//  PodcastsApp
-//
-//  Created by Bayu Yasaputro on 04/11/22.
-//
-
 import Foundation
 
 extension Date {

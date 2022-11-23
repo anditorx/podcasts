@@ -1,10 +1,3 @@
-//
-//  DPodcast+CoreDataProperties.swift
-//  PodcastsApp
-//
-//  Created by Bayu Yasaputro on 28/10/22.
-//
-//
 
 import Foundation
 import CoreData

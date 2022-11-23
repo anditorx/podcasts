@@ -133,11 +133,10 @@ extension HomeViewController: UICollectionViewDataSource {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "homeItemCollectionViewCellId", for: indexPath) as! HomeItemCollectionViewCell
                 
                 let index = indexPath.row
-                let dateDummy = viewModelMusic.musicReleaseDate(at: index)
-                
+                let releaseDate = viewModelMusic.musicReleaseDate(at: index)
                 
                 cell.labelTitle.text = viewModelMusic.musicTrackName(at: index)
-                cell.labelRelease.text = "\(dateDummy)"
+                cell.labelRelease.text = "Release date: \(releaseDate)"
                 cell.imageView.kf.setImage(with: URL(string: viewModelMusic.musicImagUrl(at: index))) { (result) in
                     switch result {
                     case.success:

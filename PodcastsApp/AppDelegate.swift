@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  PodcastsApp
-//
-//  Created by Bayu Yasaputro on 25/10/22.
-//
-
 import UIKit
 import CoreData
 

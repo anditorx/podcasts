@@ -1,10 +1,3 @@
-//
-//  DownloadViewCell.swift
-//  PodcastsApp
-//
-//  Created by Bayu Yasaputro on 04/11/22.
-//
-
 import UIKit
 
 class DownloadViewCell: UITableViewCell {

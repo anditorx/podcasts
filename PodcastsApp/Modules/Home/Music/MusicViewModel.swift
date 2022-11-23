@@ -61,7 +61,7 @@ class MusicsViewModel {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         let date = dateFormatter.date(from: date2)
-        let result = date!.stringDateFromatter(format: "d MMMM yyyy")
+        let result = date!.stringDateFromatter(format: "MMMM, d yyyy")
         
         return "\(result)"
     }

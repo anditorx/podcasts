@@ -1,9 +1,3 @@
-//
-//  PlayerProvider.swift
-//  Siniar
-//
-//  Created by Bayu Yasaputro on 30/08/22.
-//
 
 import Foundation
 import AVFoundation

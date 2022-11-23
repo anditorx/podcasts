@@ -1,10 +1,3 @@
-//
-//  BaseViewController.swift
-//  PodcastsApp
-//
-//  Created by Bayu Yasaputro on 26/10/22.
-//
-
 import UIKit
 
 class BaseViewController: UIViewController {

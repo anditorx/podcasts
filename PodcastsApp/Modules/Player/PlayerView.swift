@@ -1,10 +1,3 @@
-//
-//  PlayerView.swift
-//  PodcastsApp
-//
-//  Created by Bayu Yasaputro on 01/11/22.
-//
-
 import UIKit
 
 protocol PlayerViewDelegate: NSObjectProtocol {
