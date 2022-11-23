@@ -23,6 +23,31 @@ Mengikuti desain yang ada, berikut ini beberapa fitur yang dibuat:
 
 <img src="https://res.cloudinary.com/dzwztfzvu/image/upload/v1669192771/img_cover_l1z5ir.png">
 
+# Installation
+
+Install podcasts with CocoaPods
+
+- clone this repo
+
+```bash
+  git clone git@github.com:anditorx/podcasts.git
+```
+
+- open Podcasts directory
+
+```bash
+  cd Podcasts
+```
+
+- open terminal and cd to Podcasts folder root & run pod install (install Cocoapods for this command to work).
+
+```bash
+  pod install
+```
+
+- open `Podcasts.xcworkspace`
+- run the app
+
 # Tech Used
 
 ![Swift](https://img.shields.io/badge/swift-F54A2A?style=for-the-badge&logo=swift&logoColor=white)
