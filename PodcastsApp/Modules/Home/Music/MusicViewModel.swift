@@ -58,7 +58,12 @@ class MusicsViewModel {
         formatter.formatOptions = [.withFullDate,
                                    .withDashSeparatorInDate]
         let date2 = formatter.string(from: date1!)
-        return "\(date2)"
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let date = dateFormatter.date(from: date2)
+        let result = date!.stringDateFromatter(format: "d MMMM yyyy")
+        
+        return "\(result)"
     }
     
     
