@@ -5,7 +5,7 @@
 
 # Tentang Project
 
-Projek ini merupakan projek yang dibuat untuk memenuhi tugas akhir IOS App Development Bootcamp Batch 1. Project ini dibuat dengan Swift dengan menggunakan arsitektur MVVM (Model-View-ViewModel).
+Project ini merupakan project yang dibuat untuk memenuhi Final Project Fazztrack IOS App Development Bootcamp Batch 1. Project ini dibuat dengan Swift dengan menggunakan arsitektur MVVM (Model-View-ViewModel).
 
 # Rencana Kerja
 
