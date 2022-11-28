@@ -22,12 +22,13 @@ class HomeViewController: BaseViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         getDataBanner(q: "makna")
-        getDataMusic(q: "reality club")
+        
     }
     
     func setup() {
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
+        self.collectionView.reloadData()
     }
     
 }
@@ -40,6 +41,7 @@ extension HomeViewController: UICollectionViewDelegate {
             self.countBanner = self.viewModelBanner.numberOfBanners
 //            self.setup()
 //            self.collectionView.reloadData()
+            self.getDataMusic(q: "reality club")
             
         }
     }
@@ -49,10 +51,6 @@ extension HomeViewController: UICollectionViewDelegate {
             guard let `self` = self else { return }
             self.countMusic = self.viewModelMusic.numberOfMusic
             self.setup()
-            self.collectionView.reloadData()
-            
-            
-            
         }
     }
     
