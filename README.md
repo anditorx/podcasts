@@ -7,7 +7,7 @@
 
 Podcasts - Discover top podcasts and listen to your favorite podcasts for free. Listen to the best podcasts from your favorite genres such as comedy, sports, education, business, and more.
 
-This project is part of final assignment from iOS Development Bootcamp from FazzTrack. Built with UIKit, and using MVVM architecture.
+This project is part of final project iOS Development Bootcamp Fazztrack Batch 1. Built with UIKit, and using MVVM architecture.
 
 # Features
 
